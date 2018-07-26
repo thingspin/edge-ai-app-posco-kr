@@ -29,6 +29,10 @@
 
   "HideFromList": false,  
   "includes": [
+    {"type": "menu", "mainMenu": true, "menuId": 2, "img":"img/logo.dark.svg", "name": "Machine Learning"},
+    {"type": "dashboard", "AddToNav": true, "menuID": 2, "ico":"fa fa-industry", "path": "dashboards/D02.0.json", "name": "Model Management"},
+    {"type": "dashboard", "AddToNav": true, "menuID": 2, "ico":"fa fa-industry", "path": "dashboards/D02.1.json", "name": "Algorithm Management"},
+
     {"type": "menu", "mainMenu": true, "menuId": 0, "img":"img/logo.dark.svg", "name": "KR"},
     {"type": "dashboard", "AddToNav": true, "menuID": 0, "ico":"fa fa-industry", "path": "dashboards/D00.0.json", "name": "KR Capture History"},
     {"type": "dashboard", "AddToNav": true, "menuID": 0, "ico":"fa fa-industry", "path": "dashboards/D00.1.json", "name": "KR Inference History"},
