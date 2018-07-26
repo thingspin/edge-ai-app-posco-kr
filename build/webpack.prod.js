@@ -1,6 +1,6 @@
 const baseWebpackConfig = require('./webpack.base');
 
 var conf = baseWebpackConfig;
-conf.mode = 'development'; // cuz production wont work
+conf.mode = 'development';
 
 module.exports = baseWebpackConfig;

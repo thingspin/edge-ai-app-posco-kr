@@ -27,23 +27,26 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "POSCO",
+      "decimals": 1,
       "fill": 1,
       "gridPos": {
-        "h": 9,
+        "h": 15,
         "w": 24,
         "x": 0,
         "y": 0
       },
-      "id": 3,
+      "id": 2,
       "kernel": null,
       "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "max": true,
+        "min": true,
+        "rightSide": false,
         "show": true,
         "total": false,
-        "values": false
+        "values": true
       },
       "lines": true,
       "linewidth": 1,
@@ -63,14 +66,32 @@
         {
           "alias": "",
           "format": "time_series",
-          "rawSql": "SELECT\n  UNIX_TIMESTAMP(time) as time_sec,\n  distance as value,\n  \"distamce\" as metric\nFROM t_kr_capture\nWHERE $__timeFilter(time)\nORDER BY time ASC\n",
+          "rawSql": "SELECT\n  UNIX_TIMESTAMP(time) as time_sec,\n  t0 as value,\n  \"t0\" as metric\nFROM t_ladle_capture\nWHERE $__timeFilter(time)\nORDER BY time ASC\n",
           "refId": "A"
+        },
+        {
+          "alias": "",
+          "format": "time_series",
+          "rawSql": "SELECT\n  UNIX_TIMESTAMP(time) as time_sec,\n  t1 as value,\n  \"t1\" as metric\nFROM t_ladle_capture\nWHERE $__timeFilter(time)\nORDER BY time ASC\n",
+          "refId": "B"
+        },
+        {
+          "alias": "",
+          "format": "time_series",
+          "rawSql": "SELECT\n  UNIX_TIMESTAMP(time) as time_sec,\n  t2 as value,\n  \"t2\" as metric\nFROM t_ladle_capture\nWHERE $__timeFilter(time)\nORDER BY time ASC\n",
+          "refId": "C"
+        },
+        {
+          "alias": "",
+          "format": "time_series",
+          "rawSql": "SELECT\n  UNIX_TIMESTAMP(time) as time_sec,\n  t3 as value,\n  \"t3\" as metric\nFROM t_ladle_capture\nWHERE $__timeFilter(time)\nORDER BY time ASC\n",
+          "refId": "D"
         }
       ],
       "thresholds": [],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Distance Trend",
+      "title": "Ladle Temperature(s) Trend",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -106,82 +127,6 @@
         "align": false,
         "alignLevel": null
       }
-    },
-    {
-      "columns": [],
-      "datasource": "POSCO",
-      "fontSize": "80%",
-      "gridPos": {
-        "h": 13,
-        "w": 24,
-        "x": 0,
-        "y": 9
-      },
-      "id": 5,
-      "kernel": null,
-      "links": [],
-      "pageSize": null,
-      "reportScript": "// supported ES6\n// self === this ( something panelCtrl)\nclass ExportData_66_5 {\n  constructor(panelCtrl, result) {\n    this.result = result;\n    this.panelCtrl = panelCtrl;\n  }\n\n  convertData() {\n    return this.result;\n  }\n}\nconst convClass = new ExportData_66_5(self, [[result]]);\nreturn convClass.convertData();",
-      "scripts": "",
-      "scroll": true,
-      "showHeader": true,
-      "sort": {
-        "col": 0,
-        "desc": true
-      },
-      "styles": [
-        {
-          "alias": "Time",
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "pattern": "time",
-          "type": "date"
-        },
-        {
-          "alias": "",
-          "colorMode": null,
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "decimals": 2,
-          "pattern": "/.*/",
-          "thresholds": [],
-          "type": "number",
-          "unit": "short"
-        }
-      ],
-      "targets": [
-        {
-          "alias": "",
-          "format": "table",
-          "rawSql": "SELECT time, fileName as FILE, distance as CM, sno as SENSOR FROM t_kr_capture LIMIT 2000;",
-          "refId": "A"
-        }
-      ],
-      "title": "KR : Captured Image History",
-      "transform": "table",
-      "type": "table"
-    },
-    {
-      "folderId": null,
-      "gridPos": {
-        "h": 6,
-        "w": 24,
-        "x": 0,
-        "y": 22
-      },
-      "headings": false,
-      "id": 7,
-      "limit": 20,
-      "links": [],
-      "query": "",
-      "recent": false,
-      "search": false,
-      "starred": true,
-      "tags": [],
-      "title": "Navigate to",
-      "type": "dashlist"
     }
   ],
   "schemaVersion": 16,
@@ -220,7 +165,7 @@
     ]
   },
   "timezone": "",
-  "title": "KR Capture History",
-  "uid": "XQjvwpKmk",
-  "version": 6
+  "title": "Ladle Capture History",
+  "uid": "425E3pKik",
+  "version": 5
 }

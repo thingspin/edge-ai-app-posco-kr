@@ -9,7 +9,7 @@
   "keywords": [],
   "author": "Alexey Velikiy",
   "license": "MIT",
-  "repository": "https://github.com/thingspin/edge-ai-posco-app",
+  "repository": "https://github.com/thingspin/proj-edge-ai-posco-app",
   "devDependencies": {
     "@types/d3": "^5.0.0",
     "@types/grafana": "git+https://git@github.com/CorpGlory/types-grafana.git",
