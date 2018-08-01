@@ -1,5 +1,5 @@
 {
-  "name": "thingspin-edge-ai-posco-app",
+  "name": "edge-ai-app-posco-kr",
   "version": "0.1.0",
   "main": "dist/module",
   "scripts": {
@@ -7,9 +7,9 @@
     "dev": "webpack --progress --config build/webpack.dev.js"
   },
   "keywords": [],
-  "author": "Alexey Velikiy",
+  "author": "lonycell",
   "license": "MIT",
-  "repository": "https://github.com/thingspin/proj-edge-ai-posco-app",
+  "repository": "https://github.com/thingspin/edge-ai-app-posco-kr",
   "devDependencies": {
     "@types/d3": "^5.0.0",
     "@types/grafana": "git+https://git@github.com/CorpGlory/types-grafana.git",
