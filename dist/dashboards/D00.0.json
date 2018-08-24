@@ -17,22 +17,104 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
+  "id": 28,
   "links": [],
   "panels": [
     {
+      "api": "public/assets/gallary/pics/",
+      "columns": [],
+      "datasource": "POSCO",
+      "delay": 0.3,
+      "fontSize": "80%",
+      "gridPos": {
+        "h": 21,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "host": "",
+      "id": 9,
+      "image": "photo.png",
+      "imageCol": "IMAGE",
+      "kernel": null,
+      "links": [],
+      "pageSize": 10,
+      "repeat": false,
+      "reportScript": "// supported ES6\n// self === this ( something panelCtrl)\nclass ExportData_161_7 {\n  constructor(panelCtrl, res) {\n    this.result = res;\n    this.panelCtrl = panelCtrl;\n  }\n\n  convertData() {\n    return this.result;\n  }\n}\nconst convClass = new ExportData_161_7(self, result);\nreturn convClass.convertData();",
+      "scripts": "",
+      "scroll": false,
+      "showHeader": true,
+      "sort": {
+        "col": 0,
+        "desc": true
+      },
+      "splash": "splash.svg",
+      "styles": [
+        {
+          "alias": "Time",
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "pattern": "time",
+          "type": "date"
+        },
+        {
+          "alias": "IMAGE",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "mappingType": 1,
+          "pattern": "FILE",
+          "sanitize": true,
+          "thresholds": [],
+          "type": "string",
+          "unit": "short"
+        },
+        {
+          "alias": "",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "decimals": 2,
+          "pattern": "/.*/",
+          "thresholds": [],
+          "type": "number",
+          "unit": "short"
+        }
+      ],
+      "targets": [
+        {
+          "alias": "",
+          "format": "table",
+          "rawSql": "SELECT time, fileName as FILE, distance as CM, sno as SENSOR \nFROM t_kr_capture\nWHERE $__timeFilter(time)\nORDER BY time ASC\n",
+          "refId": "A"
+        }
+      ],
+      "title": "KR : Captured Image History",
+      "transform": "table",
+      "type": "thingspin-gallery-panel"
+    },
+    {
       "aliasColors": {
-        "distamce": "#052b51"
+        "distamce": "#eab839",
+        "distance": "#0a437c"
       },
       "bars": false,
       "dashLength": 10,
       "dashes": false,
       "datasource": "POSCO",
-      "fill": 1,
+      "fill": 0,
       "gridPos": {
-        "h": 9,
+        "h": 6,
         "w": 24,
         "x": 0,
-        "y": 0
+        "y": 21
       },
       "id": 3,
       "kernel": null,
@@ -46,7 +128,7 @@
         "values": false
       },
       "lines": true,
-      "linewidth": 1,
+      "linewidth": 2,
       "links": [],
       "nullPointMode": "null",
       "percentage": false,
@@ -63,7 +145,7 @@
         {
           "alias": "",
           "format": "time_series",
-          "rawSql": "SELECT\n  UNIX_TIMESTAMP(time) as time_sec,\n  distance as value,\n  \"distamce\" as metric\nFROM t_kr_capture\nWHERE $__timeFilter(time)\nORDER BY time ASC\n",
+          "rawSql": "SELECT\n  UNIX_TIMESTAMP(time) as time_sec,\n  distance as value,\n  \"distance\" as metric\nFROM t_kr_capture\nWHERE $__timeFilter(time)\nORDER BY time ASC\n",
           "refId": "A"
         }
       ],
@@ -86,8 +168,8 @@
       },
       "yaxes": [
         {
-          "format": "short",
-          "label": null,
+          "format": "lengthmm",
+          "label": "Distance (mm)",
           "logBase": 1,
           "max": null,
           "min": null,
@@ -99,91 +181,16 @@
           "logBase": 1,
           "max": null,
           "min": null,
-          "show": true
+          "show": false
         }
       ],
       "yaxis": {
         "align": false,
         "alignLevel": null
       }
-    },
-    {
-      "columns": [],
-      "datasource": "POSCO",
-      "fontSize": "80%",
-      "gridPos": {
-        "h": 13,
-        "w": 24,
-        "x": 0,
-        "y": 9
-      },
-      "id": 5,
-      "kernel": null,
-      "links": [],
-      "pageSize": null,
-      "reportScript": "// supported ES6\n// self === this ( something panelCtrl)\nclass ExportData_66_5 {\n  constructor(panelCtrl, result) {\n    this.result = result;\n    this.panelCtrl = panelCtrl;\n  }\n\n  convertData() {\n    return this.result;\n  }\n}\nconst convClass = new ExportData_66_5(self, [[result]]);\nreturn convClass.convertData();",
-      "scripts": "",
-      "scroll": true,
-      "showHeader": true,
-      "sort": {
-        "col": 0,
-        "desc": true
-      },
-      "styles": [
-        {
-          "alias": "Time",
-          "dateFormat": "YYYY-MM-DD HH:mm:ss",
-          "pattern": "time",
-          "type": "date"
-        },
-        {
-          "alias": "",
-          "colorMode": null,
-          "colors": [
-            "rgba(245, 54, 54, 0.9)",
-            "rgba(237, 129, 40, 0.89)",
-            "rgba(50, 172, 45, 0.97)"
-          ],
-          "decimals": 2,
-          "pattern": "/.*/",
-          "thresholds": [],
-          "type": "number",
-          "unit": "short"
-        }
-      ],
-      "targets": [
-        {
-          "alias": "",
-          "format": "table",
-          "rawSql": "SELECT time, fileName as FILE, distance as CM, sno as SENSOR FROM t_kr_capture LIMIT 2000;",
-          "refId": "A"
-        }
-      ],
-      "title": "KR : Captured Image History",
-      "transform": "table",
-      "type": "table"
-    },
-    {
-      "folderId": null,
-      "gridPos": {
-        "h": 6,
-        "w": 24,
-        "x": 0,
-        "y": 22
-      },
-      "headings": false,
-      "id": 7,
-      "limit": 20,
-      "links": [],
-      "query": "",
-      "recent": false,
-      "search": false,
-      "starred": true,
-      "tags": [],
-      "title": "Navigate to",
-      "type": "dashlist"
     }
   ],
+  "refresh": false,
   "schemaVersion": 16,
   "style": "dark",
   "tags": [],
@@ -191,14 +198,16 @@
     "list": []
   },
   "time": {
-    "from": "now-6h",
+    "from": "now-15m",
     "to": "now"
   },
   "timepicker": {
     "refresh_intervals": [
-      "5s",
+      "1s",
+      " 3s",
+      " 5s",
       "10s",
-      "30s",
+      " 30s",
       "1m",
       "5m",
       "15m",
@@ -221,6 +230,6 @@
   },
   "timezone": "",
   "title": "KR Capture History",
-  "uid": "XQjvwpKmk",
-  "version": 6
+  "uid": "KRCAPTURE0001",
+  "version": 1
 }
