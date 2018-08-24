@@ -17,49 +17,180 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
+  "id": null,
   "links": [],
   "panels": [
     {
-      "content": "TODO !\n",
-      "datasource": null,
+      "api": "public/assets/gallary/pics/",
+      "columns": [],
+      "datasource": "POSCO",
+      "delay": 0.3,
+      "fontSize": "80%",
       "gridPos": {
-        "h": 24,
+        "h": 21,
         "w": 24,
         "x": 0,
         "y": 0
       },
-      "id": 4,
+      "host": "",
+      "id": 9,
+      "image": "photo.png",
+      "imageCol": "IMAGE",
       "kernel": null,
       "links": [],
-      "mode": "html",
-      "reportScript": "// supported ES6\n// self === this ( something panelCtrl)\nclass ExportData_2_4 {\n  constructor(panelCtrl, result) {\n    this.result = result;\n    this.panelCtrl = panelCtrl;\n  }\n\n  convertData() {\n    return this.result;\n  }\n}\nconst convClass = new ExportData_2_4(self, [[result]]);\nreturn convClass.convertData();",
+      "pageSize": 10,
+      "repeat": false,
+      "reportScript": "// supported ES6\n// self === this ( something panelCtrl)\nclass ExportData_161_7 {\n  constructor(panelCtrl, res) {\n    this.result = res;\n    this.panelCtrl = panelCtrl;\n  }\n\n  convertData() {\n    return this.result;\n  }\n}\nconst convClass = new ExportData_161_7(self, result);\nreturn convClass.convertData();",
       "scripts": "",
-      "targets": [],
-      "title": "",
-      "transparent": false,
-      "type": "thingspin-html-panel"
+      "scroll": false,
+      "showHeader": true,
+      "sort": {
+        "col": 0,
+        "desc": true
+      },
+      "splash": "splash.svg",
+      "styles": [
+        {
+          "alias": "Time",
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "pattern": "time",
+          "type": "date"
+        },
+        {
+          "alias": "IMAGE",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "mappingType": 1,
+          "pattern": "FILE",
+          "sanitize": true,
+          "thresholds": [],
+          "type": "string",
+          "unit": "short"
+        },
+        {
+          "alias": "",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "decimals": 2,
+          "pattern": "/.*/",
+          "thresholds": [],
+          "type": "number",
+          "unit": "short"
+        }
+      ],
+      "targets": [
+        {
+          "alias": "",
+          "format": "table",
+          "rawSql": "SELECT time, fileName as FILE, distance as CM, sno as SENSOR \nFROM t_kr_capture\nWHERE $__timeFilter(time)\nORDER BY time ASC\n",
+          "refId": "A"
+        }
+      ],
+      "title": "KR : Captured Image History",
+      "transform": "table",
+      "type": "thingspin-gallery-panel"
     },
     {
-      "folderId": null,
+      "aliasColors": {
+        "distamce": "#eab839",
+        "distance": "#0a437c"
+      },
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "POSCO",
+      "fill": 0,
       "gridPos": {
         "h": 6,
         "w": 24,
         "x": 0,
-        "y": 24
+        "y": 21
       },
-      "headings": false,
-      "id": 2,
-      "limit": 20,
+      "id": 3,
+      "kernel": null,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 2,
       "links": [],
-      "query": "",
-      "recent": false,
-      "search": false,
-      "starred": true,
-      "tags": [],
-      "title": "Navigate to",
-      "type": "dashlist"
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "reportScript": "// supported ES6\n// self === this ( something panelCtrl)\nclass ExportData_null_2 {\n  constructor(panelCtrl, result) {\n    this.result = result;\n    this.panelCtrl = panelCtrl;\n  }\n\n  convertData() {\n    return this.result;\n  }\n}\nconst convClass = new ExportData_null_2(self, [[result]]);\nreturn convClass.convertData();",
+      "scripts": "",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "",
+          "format": "time_series",
+          "rawSql": "SELECT\n  UNIX_TIMESTAMP(time) as time_sec,\n  distance as value,\n  \"distance\" as metric\nFROM t_kr_capture\nWHERE $__timeFilter(time)\nORDER BY time ASC\n",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Distance Trend",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "lengthmm",
+          "label": "Distance (mm)",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     }
   ],
+  "refresh": false,
   "schemaVersion": 16,
   "style": "dark",
   "tags": [],
@@ -67,14 +198,16 @@
     "list": []
   },
   "time": {
-    "from": "now-6h",
+    "from": "now-15m",
     "to": "now"
   },
   "timepicker": {
     "refresh_intervals": [
-      "5s",
+      "1s",
+      " 3s",
+      " 5s",
       "10s",
-      "30s",
+      " 30s",
       "1m",
       "5m",
       "15m",
@@ -96,7 +229,7 @@
     ]
   },
   "timezone": "",
-  "title": "KR Inference History",
-  "uid": "6txujtFmz",
-  "version": 5
+  "title": "KR L2 Data History",
+  "uid": "KR0002",
+  "version": 1
 }

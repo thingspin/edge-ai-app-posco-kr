@@ -17,7 +17,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 28,
+  "id": null,
   "links": [],
   "panels": [
     {
@@ -230,6 +230,6 @@
   },
   "timezone": "",
   "title": "KR Capture History",
-  "uid": "KRCAPTURE0001",
+  "uid": "KR0001",
   "version": 1
 }

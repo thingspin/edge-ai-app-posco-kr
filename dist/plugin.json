@@ -28,10 +28,13 @@
   },
 
   "HideFromList": false,  
-  "includes": [
-    {"type": "menu", "mainMenu": true, "menuId": 0, "img":"img/logo.dark.svg", "name": "KR"},
-    {"type": "dashboard", "AddToNav": true, "menuID": 0, "ico":"fa fa-industry", "path": "dashboards/D00.0.json", "name": "KR Capture History"},
-    {"type": "dashboard", "AddToNav": true, "menuID": 0, "ico":"fa fa-industry", "path": "dashboards/D00.1.json", "name": "KR Inference History"}
+  "includes": [  
+    {"type": "menu", "AddToNav": true, "menuID": 0, "ico":"fa fa-camera", "path": "dashboards/D00.0.json", "name": "Camera Data", "uid": "KR0001"},
+    {"type": "menu", "AddToNav": true, "menuID": 0, "ico":"fa fa-industry", "path": "dashboards/D00.1.json", "name": "L2 data", "uid": "KR0002"},
+    {"type": "menu", "AddToNav": true, "menuID": 0, "ico":"fa fa-crosshairs", "path": "dashboards/D00.2.json", "name": "Inference Result", "uid": "KR0003"},
+    {"type": "dashboard", "AddToNav": false, "path": "dashboards/D00.0.json", "uid": "KR0001"},
+    {"type": "dashboard", "AddToNav": false, "path": "dashboards/D00.1.json", "uid": "KR0002"},
+    {"type": "dashboard", "AddToNav": false, "path": "dashboards/D00.2.json", "uid": "KR0003"}
   ],
   "routes": [
     {
