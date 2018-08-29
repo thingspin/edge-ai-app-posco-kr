@@ -1,6 +1,6 @@
 const baseWebpackConfig = require('./webpack.base');
 
 var conf = baseWebpackConfig;
-conf.mode = 'development';
+conf.devtool = "eval";
 
-module.exports = baseWebpackConfig;
+module.exports = conf;

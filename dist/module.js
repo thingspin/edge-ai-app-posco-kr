@@ -93,7 +93,7 @@ define(function() { return /******/ (function(modules) { // webpackBootstrap
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"page-header\">\r\n\tThingSPIN Edge AI Configuration\r\n</div>";
+eval("module.exports = \"<div class=\\\"page-header\\\">\\n\\tThingSPIN Edge AI Configuration\\n</div>\";\n\n//# sourceURL=webpack:///./app-config/config.html?");
 
 /***/ }),
 
@@ -105,25 +105,7 @@ module.exports = "<div class=\"page-header\">\r\n\tThingSPIN Edge AI Configurati
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppConfigCtrl", function() { return AppConfigCtrl; });
-var AppConfigCtrl = /** @class */ (function () {
-    function AppConfigCtrl($q) {
-        this.$q = $q;
-        this.appEditCtrl.setPreUpdateHook(this.preUpdate.bind(this));
-        this.appEditCtrl.setPostUpdateHook(this.postUpdate.bind(this));
-    }
-    AppConfigCtrl.prototype.preUpdate = function () {
-        return this.$q.resolve();
-    };
-    AppConfigCtrl.prototype.postUpdate = function () {
-        return this.$q.resolve();
-    };
-    AppConfigCtrl.template = __webpack_require__(/*! ./config.html */ "./app-config/config.html");
-    return AppConfigCtrl;
-}());
-
-
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"AppConfigCtrl\", function() { return AppConfigCtrl; });\nvar AppConfigCtrl = /** @class */ (function () {\n    function AppConfigCtrl($q) {\n        this.$q = $q;\n        this.appEditCtrl.setPreUpdateHook(this.preUpdate.bind(this));\n        this.appEditCtrl.setPostUpdateHook(this.postUpdate.bind(this));\n    }\n    AppConfigCtrl.prototype.preUpdate = function () {\n        return this.$q.resolve();\n    };\n    AppConfigCtrl.prototype.postUpdate = function () {\n        return this.$q.resolve();\n    };\n    AppConfigCtrl.template = __webpack_require__(/*! ./config.html */ \"./app-config/config.html\");\n    return AppConfigCtrl;\n}());\n\n\n\n//# sourceURL=webpack:///./app-config/config.ts?");
 
 /***/ }),
 
@@ -135,15 +117,8 @@ var AppConfigCtrl = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _app_config_config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app-config/config */ "./app-config/config.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ConfigCtrl", function() { return _app_config_config__WEBPACK_IMPORTED_MODULE_0__["AppConfigCtrl"]; });
-
-
-
-
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _app_config_config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app-config/config */ \"./app-config/config.ts\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"ConfigCtrl\", function() { return _app_config_config__WEBPACK_IMPORTED_MODULE_0__[\"AppConfigCtrl\"]; });\n\n\n\n\n\n//# sourceURL=webpack:///./module.ts?");
 
 /***/ })
 
 /******/ })});;
-//# sourceMappingURL=module.js.map

@@ -1,7 +1,7 @@
 const baseWebpackConfig = require('./webpack.base');
 
 var conf = baseWebpackConfig;
-conf.devtool = "source-map";
+conf.devtool = "eval";
 conf.mode = 'development';
 
 module.exports = conf;
