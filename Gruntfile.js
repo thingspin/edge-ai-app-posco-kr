@@ -43,7 +43,7 @@ module.exports = function(grunt) {
           files: ['<%= project.dev %>/sass/**/*.scss'],
           tasks: ['sass'],
           options: {
-            livereload: true
+            livereload: false
           }
         },
         scripts: {
@@ -56,6 +56,9 @@ module.exports = function(grunt) {
             '<%= project.dev %>/img/**',
           ],
           tasks: ['webpack:dev'], // !important
+          options: {
+            livereload: false
+          }
         },
       }
     });
